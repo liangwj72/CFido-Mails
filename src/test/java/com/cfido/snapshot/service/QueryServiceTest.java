@@ -36,12 +36,12 @@ import com.cfido.snapshot.domain.Areas;
 public class QueryServiceTest {
 
 	@Autowired
-	QueryService areaService;
+	QueryService queryService;
 
 
 	@Test
 	public void findsFirstPageOfCities() {
-		List<Areas> list = this.areaService.findAllArea();
+		List<Areas> list = this.queryService.findAllArea();
 		System.out.println(list.size());
 		// assertThat(cities.getTotalElements(), is(greaterThan(20L)));
 	}

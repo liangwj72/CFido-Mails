@@ -28,6 +28,11 @@ public class QueryService {
 	@Autowired
 	private AreasRepository areasRepository;
 
+	/**
+	 * 查找所有的信区，不分页
+	 * 
+	 * @return
+	 */
 	public List<Areas> findAllArea() {
 
 		List<Areas> list = new LinkedList<>();
@@ -42,5 +47,6 @@ public class QueryService {
 
 		return list;
 	}
+
 
 }

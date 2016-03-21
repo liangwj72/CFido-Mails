@@ -1,0 +1,81 @@
+* {
+	font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\9ED1\4F53", Arial, sans-serif;
+}
+body {
+	font-size: 16px;
+}
+.todo-project-list ul li a {
+	font-size: 14px !important;
+	padding: 8px 10px;
+}
+.todo-project-list .nav li a .badge {
+	float: right;
+	background-color: #b4c4cd !important;
+	margin-top: 1px !important;
+}
+.todo-project-list .nav li a .badge-active {
+	background-color: #ffffff !important;
+	color: #637b89 !important;
+}
+.todo-project-list .nav .active {
+	background-color: #ffffff !important;
+}
+.todo-project-list .nav-pills > li.active > a {
+	background-color: #87a9c7 !important;
+}
+div.dataTables_info {
+	padding-top: 8px;
+}
+div.dataTables_paginate {
+	float: right;
+	margin: 0;
+}
+div.dataTables_paginate ul.pagination {
+	margin: 2px 0;
+	white-space: nowrap;
+}
+#viewMailModal {
+	position: fixed;
+	padding: 5px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	background-color: #fff;
+	z-index: 20000;
+	border-left-color: rgb(232, 237, 243);
+	border-left-style: solid;
+	border-left-width: 1px;
+	box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 15px 0px;
+	box-sizing: border-box;
+	color: rgb(72, 71, 68);
+	display: block;
+	line-height: 20px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+	transition-duration: 0.5s;
+	transition-property: transform;
+	transition-timing-function: ease-in;
+	width: 700px;
+}
+
+#viewMailModal .header {
+
+border-bottom-color: rgb(238, 236, 232);
+border-bottom-style: solid;
+border-bottom-width: 1px;
+font-size:18px;
+padding:5px;
+height:50px;
+}
+
+#viewMailModal .body {
+	top:55px;
+	width:100%;
+	bottom:0px;
+	position:absolute;
+	padding:10px;
+	overflow:auto;
+}
+
+.mailquote {
+	color: rgb(172, 171, 167);
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- TemplateBeginEditable name="ex-title" -->
+<title>JConsole In Web</title>
+<!-- TemplateEndEditable -->
+<link rel="stylesheet" type="text/css" href="./statics/bootstrap-3.3.5/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="./statics/css/components-rounded.css">
+<link rel="stylesheet" type="text/css" href="./statics/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./statics/css/default.css">
+<link rel="stylesheet" type="text/css" href="./statics/css/layout.css"> 
+<link rel="stylesheet" type="text/css" href="./statics/my/jw.common.css">
+<!-- <#setting url_escaping_charset="UTF-8"> -->
+<!-- TemplateBeginEditable name="ex-sytle" -->
+额外的样式表
+<!-- TemplateEndEditable -->
+</head>
+<body>
+<!-- NAV BAR BEGIN-->
+<div class="page-header"> 
+  <!-- BEGIN HEADER MENU -->
+  <div class="page-header-menu " style="display: block;">
+    <div class="container-fluid">
+      <div class="hor-menu">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">首页</a></li>
+          <li><a href="/mail">邮件</a></li>
+          <li><a href="/user">用户</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- END HEADER MENU --> 
+</div>
+<!-- NAV BAR END-->
+<div class="page-container">
+  <div class="page-head">
+    <div class="container-fluid"> 
+      <!-- BEGIN PAGE TITLE -->
+      <div class="page-title">
+		<!-- TemplateBeginEditable name="pageTitle" -->
+        <h1>
+        Page Title <small>说明</small>
+        </h1>
+		<!-- TemplateEndEditable -->
+      </div>
+      <!-- END PAGE TITLE --> 
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="container-fluid">
+	  <!-- TemplateBeginEditable name="pre-body" -->
+      正文之上的代码
+      <!-- TemplateEndEditable -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- TemplateBeginEditable name="body" -->
+          中间主区域的代码
+		  <!-- TemplateEndEditable -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-FOOTER BEGIN -->
+ <div class="page-prefooter">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+				<h2>About</h2>
+				<p>
+					 中国惠多网历史快照.
+				</p>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs12 footer-block">
+				<h2>Documents</h2>
+                <a href="https://github.com/liangwj72/CFidoSnapshot" target="_blank" >Github开源项目</a>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+				<h2>Contacts</h2>
+				<address class="margin-bottom-40">
+				 Email: <a href="mailto:liangwj72@qq.com">liangwj72@qq.com</a>
+				</address>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- PRE-FOOTER END -->
+
+<!-- FOOTER BEGIN -->
+<div class="page-footer">
+	<div class="container-fluid">
+		 2016 
+	</div>
+</div>
+<!-- FOOTER END -->
+
+<div class="scroll-to-top" style="display: block;">
+	<i class="fa fa-arrow-circle-up"></i>
+</div>
+
+<!-- TemplateBeginEditable name="body-end" -->
+额外的代码，例如模式窗
+<!-- TemplateEndEditable -->
+
+<!-- COMMON JAVASCRIPT BEGIN -->
+<script src="./statics/jquery.min.js"></script>
+<script src="./statics/bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="./statics/my/jw.common.js"></script>
+<!-- COMMON JAVASCRIPT END -->
+
+<!-- TemplateBeginEditable name="ex-script" -->
+额外的js
+<!-- TemplateEndEditable -->
+
+</body>
+</html>

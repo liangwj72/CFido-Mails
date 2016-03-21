@@ -25,7 +25,7 @@ public class IndexActions {
 
 		model.put("test", "hi ");
 
-		return "index.jsp";
+		return "index";
 	}
 
 }

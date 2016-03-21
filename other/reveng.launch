@@ -32,15 +32,15 @@
 <booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.query" value="false"/>
 <stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.query.extension_id" value="org.hibernate.tools.query"/>
 <booleanAttribute key="org.hibernate.tools.jdk5" value="true"/>
-<stringAttribute key="org.hibernate.tools.outputdir" value="\CFidoHis\src\main\java"/>
+<stringAttribute key="org.hibernate.tools.outputdir" value="\CFidoSnapshot\src\main\java"/>
 <stringAttribute key="org.hibernate.tools.package" value="com.cfido.snapshot.domain"/>
 <booleanAttribute key="org.hibernate.tools.prefercompositeids" value="true"/>
-<stringAttribute key="org.hibernate.tools.revEngFile" value="\CFidoHis\other\hibernate.reveng.xml"/>
+<stringAttribute key="org.hibernate.tools.revEngFile" value="\CFidoSnapshot\other\hibernate.reveng.xml"/>
 <booleanAttribute key="org.hibernate.tools.reveng.detect_many_to_many" value="true"/>
 <booleanAttribute key="org.hibernate.tools.reveng.detect_one_to_one" value="true"/>
 <booleanAttribute key="org.hibernate.tools.reveng.detect_optimistc_lock" value="true"/>
 <booleanAttribute key="org.hibernate.tools.schema2hbm" value="true"/>
-<stringAttribute key="org.hibernate.tools.templatepath" value="\CFidoHis\other\hibernate-tools-template"/>
+<stringAttribute key="org.hibernate.tools.templatepath" value="\CFidoSnapshot\other\hibernate-tools-template"/>
 <booleanAttribute key="org.hibernate.tools.useExternalProcess" value="false"/>
 <booleanAttribute key="org.hibernate.tools.useOwnTemplates" value="true"/>
 </launchConfiguration>
