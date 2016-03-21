@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.hibernate.eclipse.launch.CodeGenerationLaunchConfigurationType">
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.hibernate.eclipse.launch.CodeGenerationLaunchGroup"/>
+</listAttribute>
+<stringAttribute key="org.hibernate.tools.configurationname" value="hibernateConfig"/>
+<booleanAttribute key="org.hibernate.tools.ejb3" value="true"/>
+<listAttribute key="org.hibernate.tools.exporters">
+<listEntry value="org.hibernate.tools.hbm2java"/>
+<listEntry value="org.hibernate.tools.hbm2hbmxml"/>
+<listEntry value="org.hibernate.tools.hbm2dao"/>
+<listEntry value="org.hibernate.tools.hbmtemplate"/>
+<listEntry value="org.hibernate.tools.hbm2cfgxml"/>
+<listEntry value="org.hibernate.tools.hbm2doc"/>
+<listEntry value="org.hibernate.tools.hbm2ddl"/>
+<listEntry value="org.hibernate.tools.query"/>
+</listAttribute>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2cfgxml" value="false"/>
+<stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2cfgxml.extension_id" value="org.hibernate.tools.hbm2cfgxml"/>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2dao" value="false"/>
+<stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2dao.extension_id" value="org.hibernate.tools.hbm2dao"/>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2ddl" value="false"/>
+<stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2ddl.extension_id" value="org.hibernate.tools.hbm2ddl"/>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2doc" value="false"/>
+<stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2doc.extension_id" value="org.hibernate.tools.hbm2doc"/>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2hbmxml" value="true"/>
+<stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2hbmxml.extension_id" value="org.hibernate.tools.hbm2hbmxml"/>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2java" value="true"/>
+<stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2java.extension_id" value="org.hibernate.tools.hbm2java"/>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbmtemplate" value="false"/>
+<stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbmtemplate.extension_id" value="org.hibernate.tools.hbmtemplate"/>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.query" value="false"/>
+<stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.query.extension_id" value="org.hibernate.tools.query"/>
+<booleanAttribute key="org.hibernate.tools.jdk5" value="true"/>
+<stringAttribute key="org.hibernate.tools.outputdir" value="\CFidoHis\src\main\java"/>
+<stringAttribute key="org.hibernate.tools.package" value="com.cfido.snapshot.domain"/>
+<booleanAttribute key="org.hibernate.tools.prefercompositeids" value="true"/>
+<stringAttribute key="org.hibernate.tools.revEngFile" value="\CFidoHis\other\hibernate.reveng.xml"/>
+<booleanAttribute key="org.hibernate.tools.reveng.detect_many_to_many" value="true"/>
+<booleanAttribute key="org.hibernate.tools.reveng.detect_one_to_one" value="true"/>
+<booleanAttribute key="org.hibernate.tools.reveng.detect_optimistc_lock" value="true"/>
+<booleanAttribute key="org.hibernate.tools.schema2hbm" value="true"/>
+<stringAttribute key="org.hibernate.tools.templatepath" value="\CFidoHis\other\hibernate-tools-template"/>
+<booleanAttribute key="org.hibernate.tools.useExternalProcess" value="false"/>
+<booleanAttribute key="org.hibernate.tools.useOwnTemplates" value="true"/>
+</launchConfiguration>
