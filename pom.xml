@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.cfido</groupId>
-	<artifactId>Snapshot</artifactId>
+	<artifactId>CfidoSnapshot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 

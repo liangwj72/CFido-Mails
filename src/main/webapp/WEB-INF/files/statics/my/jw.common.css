@@ -4,25 +4,39 @@
 body {
 	font-size: 16px;
 }
-.todo-project-list ul li a {
+
+.area-list ul li a {
 	font-size: 14px !important;
 	padding: 8px 10px;
 }
-.todo-project-list .nav li a .badge {
+
+.area-list ul li {
+	width:300px;
+	margin:5px;
+	border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+}
+
+.area-list ul li .desc {
+	color:#676565;
+}
+
+.area-list .nav li a .badge {
 	float: right;
 	background-color: #b4c4cd !important;
 	margin-top: 1px !important;
 }
-.todo-project-list .nav li a .badge-active {
+.area-list .nav li a .badge-active {
 	background-color: #ffffff !important;
 	color: #637b89 !important;
 }
-.todo-project-list .nav .active {
+.area-list .nav .active {
 	background-color: #ffffff !important;
 }
-.todo-project-list .nav-pills > li.active > a {
+.area-list .nav-pills > li.active > a {
 	background-color: #87a9c7 !important;
 }
+
 div.dataTables_info {
 	padding-top: 8px;
 }

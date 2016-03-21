@@ -1,7 +1,7 @@
 
 package com.cfido.snapshot.repository;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.cfido.snapshot.domain.Areas;
 
@@ -13,6 +13,6 @@ import com.cfido.snapshot.domain.Areas;
  * @author <a href="https://github.com/liangwj72">Alex (梁韦江)</a>
  * @date 2016年3月18日
  */
-public interface AreasRepository extends PagingAndSortingRepository<Areas, Long> {
+public interface AreasRepository extends CrudRepository<Areas, Long> {
 
 }
