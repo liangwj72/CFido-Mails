@@ -11,6 +11,12 @@
 	<url>http://www.cfido.com</url>
 
 	<properties>
+		<!-- 默认jdk是1.7版本 -->
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
+
+		<!-- 默认编码格式是UTF-8 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<start-class>com.cfido.snapshot.MainApplication</start-class>
 	</properties>
@@ -21,6 +27,21 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.3.3.RELEASE</version>
 	</parent>
+
+	<mirrors>
+		<mirror>
+			<id>nexus-osc</id>
+			<mirrorOf>central</mirrorOf>
+			<name>Nexus osc</name>
+			<url>http://maven.oschina.net/content/groups/public/</url>
+		</mirror>
+		<mirror>
+			<id>nexus-osc-thirdparty</id>
+			<mirrorOf>thirdparty</mirrorOf>
+			<name>Nexus osc thirdparty</name>
+			<url>http://maven.oschina.net/content/repositories/thirdparty/</url>
+		</mirror>
+	</mirrors>
 
 	<dependencies>
 
