@@ -43,7 +43,7 @@ public class UserAction extends BaseAction {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("/users/list")
+	@RequestMapping("/users")
 	public ModelAndView list(String userName, Integer pageNo, Map<String, Object> model) {
 		log.debug("/users/list?userName={}", userName);
 

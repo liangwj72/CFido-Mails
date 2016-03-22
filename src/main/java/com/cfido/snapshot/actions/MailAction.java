@@ -1,6 +1,9 @@
 package com.cfido.snapshot.actions;
 
+import java.io.IOException;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,18 +13,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.cfido.snapshot.domain.Mail;
 import com.cfido.snapshot.formAndVo.AreaModel;
 import com.cfido.snapshot.formAndVo.MailModel;
 import com.cfido.snapshot.formAndVo.PageQueryResult;
-import com.cfido.snapshot.formAndVo.ReadMailResponse;
 import com.cfido.snapshot.mvc.BaseAction;
 import com.cfido.snapshot.mvc.SysMenuEnum;
 import com.cfido.snapshot.mvc.VoConstants;
@@ -80,15 +80,15 @@ public class MailAction extends BaseAction {
 		if (pageNo != null && pageNo >= 1) {
 			page = pageNo;
 		}
-		
+
 		// 需要判断areaid是否合法
 		AreaModel areaVo = this.queryService.getAreaModelById(areaId);
-		if (areaVo!=null) {
+		if (areaVo != null) {
 
 			// 显示的页面从1页开始，程序是从0页开始
 			Pageable pageable = new PageRequest(page - 1, VoConstants.PAGE_SIZE, Sort.Direction.DESC, "createDate");
 			PageQueryResult<MailModel> pageVo = this.queryService.findMailByAreaId(areaId, pageable);
-			
+
 			pageVo.setActionUrl("/area/" + areaId);
 
 			model.put(VoConstants.VO_PAGE_RESULT, pageVo);// 分页搜索结果
@@ -98,7 +98,7 @@ public class MailAction extends BaseAction {
 		} else {
 			return new ModelAndView(new RedirectView("/areas"));
 		}
-		
+
 	}
 
 	@RequestMapping("/area/{areaId}")
@@ -106,22 +106,19 @@ public class MailAction extends BaseAction {
 		return this.areaMails(areaId, 1, model);
 	}
 
-	@RequestMapping("/mail/{msgId}")
-	public ModelAndView readMail(@PathVariable String msgId) {
-		log.debug("/mail/{}", msgId);
+	@RequestMapping("/mail/{id}")
+	public ModelAndView readMail(@PathVariable Integer id, Map<String, Object> model, HttpServletResponse response)
+			throws IOException {
+		log.debug("/mail/{}", id);
 
-		ReadMailResponse res = new ReadMailResponse();
-
-		if (!StringUtils.isEmpty(msgId)) {
-			Mail po = this.queryService.findMail(msgId);
-			res.setMail(po);
+		MailModel vo = this.queryService.findMail(id);
+		if (vo != null) {
+			model.put("mail", vo);
+			return new ModelAndView("readMail");
+		} else {
+			return new ModelAndView("readMail_not_found");
 		}
 
-		if (res.getMail() == null) {
-			res.setCode(-1);
-		}
-
-		return new ModelAndView("readMail");
 	}
 
 }

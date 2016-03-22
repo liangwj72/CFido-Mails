@@ -88,6 +88,11 @@ div.dataTables_paginate ul.pagination {
 	position: absolute;
 	padding: 10px;
 }
-.mailquote {
+
+.read_mail .mailquote {
 	color: rgb(172, 171, 167);
+}
+
+.read_mail .replys {
+	margin:10px;
 }

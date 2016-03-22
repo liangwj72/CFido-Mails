@@ -123,8 +123,22 @@ public class QueryService {
 
 	}
 
-	public Mail findMail(String msgId) {
-		return this.mailRepository.findOne(msgId);
+	public MailModel findMail(Integer msgId) {
+
+		Mail po = this.mailRepository.findOne(msgId);
+		if (po == null) {
+			return null;
+		}
+
+		MailModel vo = new MailModel(po);
+
+		if (po.getReplays() > 0) {
+			// 有回复的
+			List<Mail> orginReplayList = this.mailRepository.findByOriginMsgId(po.getMsgId());
+			vo.addReplys(orginReplayList);
+		}
+
+		return vo;
 	}
 
 }
