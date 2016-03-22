@@ -28,21 +28,6 @@
 		<version>1.3.3.RELEASE</version>
 	</parent>
 
-	<mirrors>
-		<mirror>
-			<id>nexus-osc</id>
-			<mirrorOf>central</mirrorOf>
-			<name>Nexus osc</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
-		</mirror>
-		<mirror>
-			<id>nexus-osc-thirdparty</id>
-			<mirrorOf>thirdparty</mirrorOf>
-			<name>Nexus osc thirdparty</name>
-			<url>http://maven.oschina.net/content/repositories/thirdparty/</url>
-		</mirror>
-	</mirrors>
-
 	<dependencies>
 
 		<dependency>
