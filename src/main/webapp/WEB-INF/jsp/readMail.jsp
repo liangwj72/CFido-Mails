@@ -53,11 +53,10 @@
 					<tbody>
 						<c:forEach items="${mail.replyList}" var="vo">
 							<tr role="row">
-								<td><a href="/mail/${vo.po.id }" 
-									class="js_viewMail"><c:out value="${vo.subject }" /></a>
-									
-									<c:if test="${vo.po.replays>0}"><span class="label label-sm label-info">${vo.po.replays}</span></c:if>
-									</td>
+								<td><a href="/mail/${vo.po.id }" class="js_viewMail"><c:out
+											value="${vo.subject }" /></a> <c:if test="${vo.po.replays>0}">
+										<span class="label label-sm label-info">${vo.po.replays}</span>
+									</c:if></td>
 								<td><c:out value="${vo.po.mailFrom}" /> <i
 									class="fa fa-long-arrow-right"></i> <c:out
 										value="${vo.po.mailTo}" /></td>
@@ -70,6 +69,14 @@
 				</table>
 
 			</c:if>
+
+			<hr />
+			<!-- UY BEGIN -->
+			<div id="uyan_frame"></div>
+			<script type="text/javascript"
+				src="http://v2.uyan.cc/code/uyan.js?uid=2090355"></script>
+			<!-- UY END -->
+
 		</div>
 	</div>
 </body>

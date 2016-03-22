@@ -5,7 +5,7 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <property name="java-output-path" value="/CFidoHis/target/classes"/>
-        <property name="context-root" value="Snapshot"/>
-        <property name="component.exclusion.patterns" value="**/log4j.properties"/>
+        <property name="context-root" value="CfidoSnapshot"/>
+        <property name="component.exclusion.patterns"/>
     </wb-module>
 </project-modules>

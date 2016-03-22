@@ -114,19 +114,9 @@
 			<!-- 打包时不能将log4j的配置文件给打包进去 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>**/log4j.properties</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<packagingExcludes>**/log4j.properties</packagingExcludes>
-					<warSourceExcludes>**/log4j.properties</warSourceExcludes>
+					<!-- <packagingExcludes>**/log4j.properties</packagingExcludes> -->
 				</configuration>
 			</plugin>
 

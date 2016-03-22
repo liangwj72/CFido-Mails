@@ -59,21 +59,23 @@
 									并整理成为大家现在看到的这个网站，也让我们这批最古来的网友在过了差不多20年后，重新看我们当年的言论。</p>
 								<p>By 梁韦江 2016.03</p>
 
-				<!-- UY BEGIN -->
-						<div id="uyan_frame"></div>
-						<script type="text/javascript"
-							src="http://v2.uyan.cc/code/uyan.js?uid=2090355"></script>
-						<!-- UY END -->
 							</div>
 						</div>
 
 						<!-- InstanceEndEditable -->
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="col-md-12">
+						<!-- UY BEGIN -->
+						<div id="uyan_frame"></div>
+						<script type="text/javascript"
+							src="http://v2.uyan.cc/code/uyan.js?uid=2090355"></script>
+						<!-- UY END -->
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
