@@ -1,6 +1,8 @@
 
 package com.cfido.snapshot.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.cfido.snapshot.domain.Mail;
@@ -14,5 +16,9 @@ import com.cfido.snapshot.domain.Mail;
  * @date 2016年3月18日
  */
 public interface MailRepository extends PagingAndSortingRepository<Mail, String> {
+
+	public Page<Mail> findByAreaId(Integer area, Pageable paramPageable);
+
+	public Page<Mail> findByMailFrom(String mailFrom, Pageable paramPageable);
 
 }

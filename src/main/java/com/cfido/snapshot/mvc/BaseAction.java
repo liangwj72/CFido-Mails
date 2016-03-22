@@ -33,6 +33,6 @@ public abstract class BaseAction {
 			}
 			menuList.add(vo);
 		}
-		model.addAttribute("menuList", menuList);
+		model.addAttribute(VoConstants.VO_MENU_LIST, menuList);
 	}
 }

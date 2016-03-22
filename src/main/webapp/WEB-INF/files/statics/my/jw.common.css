@@ -4,23 +4,20 @@
 body {
 	font-size: 16px;
 }
-
 .area-list ul li a {
 	font-size: 14px !important;
 	padding: 8px 10px;
 }
-
 .area-list ul li {
-	width:300px;
-	margin:5px;
+	width: 300px;
+	margin: 5px;
 	border: 1px solid rgba(0,0,0,.2);
-    border-radius: 6px;
+	border-radius: 6px;
 }
-
 .area-list ul li .desc {
-	color:#676565;
+	color: #676565;
+	display:block;
 }
-
 .area-list .nav li a .badge {
 	float: right;
 	background-color: #b4c4cd !important;
@@ -36,9 +33,10 @@ body {
 .area-list .nav-pills > li.active > a {
 	background-color: #87a9c7 !important;
 }
-
 div.dataTables_info {
 	padding-top: 8px;
+	margin:0px 10px;
+	height:45px;
 }
 div.dataTables_paginate {
 	float: right;
@@ -48,7 +46,11 @@ div.dataTables_paginate ul.pagination {
 	margin: 2px 0;
 	white-space: nowrap;
 }
-#viewMailModal {
+.dataTables_input{
+	margin-top:4px;
+}
+
+#viewMailDiv {
 	position: fixed;
 	padding: 5px;
 	top: 0px;
@@ -71,25 +73,21 @@ div.dataTables_paginate ul.pagination {
 	width: 700px;
 }
 
-#viewMailModal .header {
-
-border-bottom-color: rgb(238, 236, 232);
-border-bottom-style: solid;
-border-bottom-width: 1px;
-font-size:18px;
-padding:5px;
-height:50px;
+#viewMailDiv .header {
+	border-bottom-color: rgb(238, 236, 232);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	margin:1px;
+	height: 30px;
 }
-
-#viewMailModal .body {
-	top:55px;
-	width:100%;
-	bottom:0px;
-	position:absolute;
-	padding:10px;
-	overflow:auto;
+#viewMailDiv iframe {
+	width: 100%;
+	top:30px;
+	height:100%;
+	bottom: 0px;
+	position: absolute;
+	padding: 10px;
 }
-
 .mailquote {
 	color: rgb(172, 171, 167);
 }

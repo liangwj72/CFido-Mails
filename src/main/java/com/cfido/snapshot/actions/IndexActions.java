@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 import com.cfido.snapshot.mvc.BaseAction;
 import com.cfido.snapshot.mvc.SysMenuEnum;
@@ -30,12 +29,6 @@ public class IndexActions extends BaseAction {
 	}
 
 	@RequestMapping("/")
-	public ModelAndView welcomeRediect(Map<String, Object> model) {
-
-		return new ModelAndView(new RedirectView("welcome/index"));
-	}
-
-	@RequestMapping("/welcome/index")
 	public ModelAndView welcome(Map<String, Object> model) {
 
 		return new ModelAndView("index");

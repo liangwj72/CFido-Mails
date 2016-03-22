@@ -10,9 +10,9 @@ package com.cfido.snapshot.mvc;
  */
 public enum SysMenuEnum {
 
-	Index("/welcome/index", "首页"),
-	Mails("/areas/list", "邮件"),
-	Users("/users/list", "用户"),
+	Index("/", "首页"),
+	Mails("/areas", "邮件"),
+	Users("/users", "用户"),
 
 	Unknow("", "");
 

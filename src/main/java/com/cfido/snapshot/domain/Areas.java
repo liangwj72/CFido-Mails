@@ -3,6 +3,8 @@ package com.cfido.snapshot.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,7 +19,7 @@ public class Areas implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String id;
+	private Integer id;
 	private String name;
 	private int num;
 	private String memo;
@@ -25,26 +27,25 @@ public class Areas implements java.io.Serializable {
 	public Areas() {
 	}
 
-	public Areas(String id, int num) {
-		this.id = id;
+	public Areas(int num) {
 		this.num = num;
 	}
 
-	public Areas(String id, String name, int num, String memo) {
-		this.id = id;
+	public Areas(String name, int num, String memo) {
 		this.name = name;
 		this.num = num;
 		this.memo = memo;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
-	@Column(name = "id", unique = true, nullable = false, length = 50)
-	public String getId() {
+	@Column(name = "id", unique = true, nullable = false)
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

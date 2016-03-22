@@ -2,6 +2,7 @@
 $(document).ready(function() {
 	jmxweb.handleGoTop();// go top
 	jmxweb.initViewMail();//查看邮件
+	jmxweb.initPageBar();//翻页按钮
 	//$(".js_viewMail").click();
 });
 
@@ -10,10 +11,21 @@ var jmxweb = {
 	initViewMail : function() {
 		console.log("jmxweb.initViewMail()");
 		$(".js_viewMail").click(function(e) {
-			e.preventDefault();//先禁止页面跳转，我们是用ajax查看邮件的
-			
-            var msgId = $(this).attr("data-msgId");
-			console.log("view mail msgid=" + msgId);
+			$("#viewMailDiv").show();
+        });
+		
+		$("#id_viewMailClose").click(function(e) {
+			$("#viewMailDiv").hide();
+        });
+	},
+	
+	initPageBar : function() {
+		$("#id_pageBar_go").click(function(e) {
+			var action = $(this).attr("data-action");
+			var url = action + "/" + $("#id_pageBar_pageNo").val();
+			console.log("翻页到 " + url);
+			location.href = url;
+            
         });
 	},
 

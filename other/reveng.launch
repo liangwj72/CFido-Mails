@@ -3,7 +3,7 @@
 <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
 <listEntry value="org.hibernate.eclipse.launch.CodeGenerationLaunchGroup"/>
 </listAttribute>
-<stringAttribute key="org.hibernate.tools.configurationname" value="hibernateConfig"/>
+<stringAttribute key="org.hibernate.tools.configurationname" value="localHostHibernate"/>
 <booleanAttribute key="org.hibernate.tools.ejb3" value="true"/>
 <listAttribute key="org.hibernate.tools.exporters">
 <listEntry value="org.hibernate.tools.hbm2java"/>
@@ -23,7 +23,7 @@
 <stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2ddl.extension_id" value="org.hibernate.tools.hbm2ddl"/>
 <booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2doc" value="false"/>
 <stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2doc.extension_id" value="org.hibernate.tools.hbm2doc"/>
-<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2hbmxml" value="true"/>
+<booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2hbmxml" value="false"/>
 <stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2hbmxml.extension_id" value="org.hibernate.tools.hbm2hbmxml"/>
 <booleanAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2java" value="true"/>
 <stringAttribute key="org.hibernate.tools.exporters.org.hibernate.tools.hbm2java.extension_id" value="org.hibernate.tools.hbm2java"/>

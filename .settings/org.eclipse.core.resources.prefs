@@ -3,6 +3,7 @@ encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/resources/application.properties=UTF-8
 encoding//src/main/resources/log4j.properties=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/areaMails.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/includes/_foot.jsp=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8
