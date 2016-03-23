@@ -22,7 +22,18 @@ var jmxweb = {
 	initPageBar : function() {
 		$("#id_pageBar_go").click(function(e) {
 			var action = $(this).attr("data-action");
-			var url = action + "/" + $("#id_pageBar_pageNo").val();
+			var limit = $(this).attr("data-limit");
+			
+			var page = parseInt($("#id_pageBar_pageNo").val());
+			if (isNaN(page)) {
+				page = 1;
+			}
+			
+			if (page>limit) {
+				page = limit;
+			}
+			
+			var url = action + "/" + page;
 			console.log("翻页到 " + url);
 			location.href = url;
             

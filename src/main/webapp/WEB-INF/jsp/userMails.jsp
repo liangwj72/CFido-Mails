@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title><c:out value="${areaVo.po.name}"/> - CFido 邮件快照</title>
+<title>${userVo.po.userName} - CFido 邮件快照 </title>
 <%@include file="includes/_css.jsp"%>
 </head>
 
@@ -18,7 +18,7 @@
 				<!-- BEGIN PAGE TITLE -->
 				<div class="page-title">
 					<!-- InstanceBeginEditable name="pageTitle" -->
-					当前信区: <c:out value="${areaVo.po.name}"/>
+					发件人: ${userVo.po.userName} 发的邮件
 					<!-- InstanceEndEditable -->
 				</div>
 				<!-- END PAGE TITLE -->

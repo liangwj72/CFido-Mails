@@ -10,29 +10,30 @@ body {
 }
 .area-list ul li {
 	width: 300px;
-	margin: 5px;
-	border: 1px solid rgba(0,0,0,.2);
-	border-radius: 6px;
+	margin: 2px;
+	border-bottom: 1px solid rgba(0,0,0,.2);
 }
+.area-list.user ul li {
+	width: 100%;
+	margin: 2px;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
 .area-list ul li .desc {
 	color: #676565;
 	display:block;
 }
 .area-list .nav li a .badge {
 	float: right;
-	background-color: #b4c4cd !important;
 	margin-top: 1px !important;
 }
-.area-list .nav li a .badge-active {
-	background-color: #ffffff !important;
-	color: #637b89 !important;
+.area-list .nav li a .pos {
+	float:left;
+	width:70px;
+	color:#7B7B7B;
 }
-.area-list .nav .active {
-	background-color: #ffffff !important;
-}
-.area-list .nav-pills > li.active > a {
-	background-color: #87a9c7 !important;
-}
+
+
 div.dataTables_info {
 	padding-top: 8px;
 	margin:0px 10px;

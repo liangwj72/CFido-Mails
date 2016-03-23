@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +22,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.cfido.snapshot.formAndVo.AreaModel;
 import com.cfido.snapshot.formAndVo.MailModel;
 import com.cfido.snapshot.formAndVo.PageQueryResult;
+import com.cfido.snapshot.formAndVo.UserModel;
 import com.cfido.snapshot.mvc.BaseAction;
 import com.cfido.snapshot.mvc.SysMenuEnum;
 import com.cfido.snapshot.mvc.VoConstants;
@@ -73,7 +74,7 @@ public class MailAction extends BaseAction {
 	 * @return
 	 */
 	@RequestMapping("/area/{areaId}/{pageNo}")
-	public ModelAndView areaMails(@PathVariable Integer areaId, @PathVariable Integer pageNo, Map<String, Object> model) {
+	public ModelAndView areaMails(@PathVariable Integer areaId, @PathVariable Integer pageNo, ModelMap model) {
 		log.debug("/area/{}/{}", areaId, pageNo);
 
 		int page = 1;
@@ -86,7 +87,7 @@ public class MailAction extends BaseAction {
 		if (areaVo != null) {
 
 			// 显示的页面从1页开始，程序是从0页开始
-			Pageable pageable = new PageRequest(page - 1, VoConstants.PAGE_SIZE, Sort.Direction.DESC, "createDate");
+			Pageable pageable = new PageRequest(page - 1, VoConstants.PAGE_SIZE);
 			PageQueryResult<MailModel> pageVo = this.queryService.findMailByAreaId(areaId, pageable);
 
 			pageVo.setActionUrl("/area/" + areaId);
@@ -102,7 +103,7 @@ public class MailAction extends BaseAction {
 	}
 
 	@RequestMapping("/area/{areaId}")
-	public ModelAndView areaMails(@PathVariable Integer areaId, Map<String, Object> model) {
+	public ModelAndView areaMails(@PathVariable Integer areaId, ModelMap model) {
 		return this.areaMails(areaId, 1, model);
 	}
 
@@ -121,4 +122,43 @@ public class MailAction extends BaseAction {
 
 	}
 
+	/**
+	 * 查询该用户的所有邮件
+	 * 
+	 * @param userId
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/user/{userId}/{pageNo}")
+	public ModelAndView userMails(@PathVariable Integer userId, @PathVariable Integer pageNo, ModelMap model) {
+		log.debug("/user/{}", userId);
+
+		int page = 1;
+		if (pageNo != null && pageNo >= 1) {
+			page = pageNo;
+		}
+
+		// 需要判断userId是否合法
+		UserModel userVo = this.queryService.getUserModelById(userId);
+		if (userVo != null) {
+
+			// 显示的页面从1页开始，程序是从0页开始
+			Pageable pageable = new PageRequest(page - 1, VoConstants.PAGE_SIZE);
+			PageQueryResult<MailModel> pageVo = this.queryService.findMailFromByUser(userVo.getPo().getUserName(), pageable);
+
+			pageVo.setActionUrl("/user/" + userId);
+
+			model.put(VoConstants.VO_PAGE_RESULT, pageVo);// 分页搜索结果
+			model.put("userVo", userVo);// 信区
+
+			return new ModelAndView("userMails");
+		} else {
+			return new ModelAndView(new RedirectView("/areas"));
+		}
+	}
+
+	@RequestMapping("/user/{userId}")
+	public ModelAndView userMails(@PathVariable Integer userId, ModelMap model) {
+		return this.userMails(userId, 1, model);
+	}
 }

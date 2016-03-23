@@ -23,7 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cfido.snapshot.MainApplication;
@@ -54,17 +53,12 @@ public class QueryServiceTest {
 		// assertThat(cities.getTotalElements(), is(greaterThan(20L)));
 	}
 
-	@Test
-	public void testfindMailByArea() {
-		Page<Mail> page = this.mailDao.findByAreaId(14, new PageRequest(0, 3, Sort.Direction.DESC, "createDate"));
-		StringBuffer sb = new StringBuffer();
-		sb.append(String.format("总数：%d\n", page.getTotalElements()));
-		sb.append(String.format("prev：%s\n", page.hasPrevious()));
-		sb.append(String.format("next：%s\n", page.hasNext()));
-		sb.append(String.format("number：%s\n", page.getNumber()));
 
-		System.out.println(sb.toString());
+	// @Test
+	public void testFindMailByAreaId() {
+		Page<Integer> page = this.mailDao.findIdByAreaId(1, new PageRequest(2500, 20));
+		List<Mail> list = this.mailDao.findByIdIn(page.getContent().toArray(new Integer[0]));
 
-		System.out.println("");
+		System.out.println(list.size());
 	}
 }

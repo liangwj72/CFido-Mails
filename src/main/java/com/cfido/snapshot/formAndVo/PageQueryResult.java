@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 /**
  * 用于存储分页查询的结果
@@ -69,6 +70,42 @@ public class PageQueryResult<T> implements Serializable {
 			this.prev.setClassForDisable();
 			this.itemTotal = 0;
 			this.pageNo = 0;
+		}
+
+	}
+
+	public PageQueryResult(int itemTotal, List<T> list, Pageable pageable) {
+		this.list = list;
+		this.itemTotal = itemTotal;
+		this.pageNo = pageable.getPageNumber();
+		this.pageSize = pageable.getPageSize();
+
+		if (itemTotal > 0) {
+			pageTotal = itemTotal / pageSize;
+			if (itemTotal % pageSize != 0)
+				pageTotal++;
+			if (pageNo < 1) {
+				this.pageNo = 1;
+			}
+		} else {
+			this.pageTotal = 0;
+		}
+		if (pageNo > pageTotal) {
+			pageNo = pageTotal;
+		}
+
+		// 上一页
+		if (this.pageNo > 1) {
+			this.prev.pageNo = this.pageNo - 1;
+		} else {
+			this.prev.setClassForDisable();
+		}
+
+		// 下一页
+		if (this.itemTotal > 0 && pageTotal > pageNo) {
+			this.next.pageNo = this.pageNo + 1;
+		} else {
+			this.next.setClassForDisable();
 		}
 
 	}

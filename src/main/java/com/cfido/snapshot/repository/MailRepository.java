@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.cfido.snapshot.domain.Mail;
@@ -19,10 +20,16 @@ import com.cfido.snapshot.domain.Mail;
  */
 public interface MailRepository extends PagingAndSortingRepository<Mail, Integer> {
 
-	public Page<Mail> findByAreaId(Integer area, Pageable paramPageable);
-
-	public Page<Mail> findByMailFrom(String mailFrom, Pageable paramPageable);
+	public Page<Mail> findByMailFrom(String mailFrom, Pageable pageable);
 
 	public List<Mail> findByOriginMsgId(String originMsgId);
+
+	@Query("select m.id from Mail m where m.areaId=?1")
+	public Page<Integer> findIdByAreaId(Integer area, Pageable pageable);
+
+	public List<Mail> findByIdIn(Integer[] ids);
+
+	@Query("select m.id from Mail m where m.mailFrom=?1")
+	public Page<Integer> findIdByMailFrom(String from, Pageable pageable);
 
 }

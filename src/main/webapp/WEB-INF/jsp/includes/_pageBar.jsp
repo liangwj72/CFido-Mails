@@ -18,7 +18,7 @@
 	<div class="input-group input-small pull-right dataTables_input">
 		<input type="number" class="form-control" value="${pageVo.pageNo}" id="id_pageBar_pageNo"> <span
 			class="input-group-btn">
-			<button class="btn default" type="button" data-action="${pageVo.actionUrl}" id="id_pageBar_go" >Go!</button>
+			<button class="btn default" type="button" data-action="${pageVo.actionUrl}" data-limit="${pageVo.pageTotal}" id="id_pageBar_go" >Go!</button>
 		</span>
 	</div>
 </div>
