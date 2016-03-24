@@ -170,7 +170,7 @@ public class PageQueryResult<T> implements Serializable {
 		return pageBarLinkCount;
 	}
 
-	public class PageNumBean implements Serializable {
+	public static class PageNumBean implements Serializable {
 
 		/**
 		 * 

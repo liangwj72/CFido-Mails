@@ -53,6 +53,20 @@ public class MailModel extends BasePoModel<Mail> {
 
 	private List<MailModel> replyList;
 
+	private MailModel origin;
+
+	public boolean isHasOriginMail() {
+		return this.origin != null;
+	}
+
+	public MailModel getOrigin() {
+		return origin;
+	}
+
+	public void setOrigin(MailModel origin) {
+		this.origin = origin;
+	}
+
 	public List<MailModel> getReplyList() {
 		return replyList;
 	}

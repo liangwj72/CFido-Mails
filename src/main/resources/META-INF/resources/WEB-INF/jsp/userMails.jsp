@@ -18,7 +18,9 @@
 				<!-- BEGIN PAGE TITLE -->
 				<div class="page-title">
 					<!-- InstanceBeginEditable name="pageTitle" -->
-					发件人: ${userVo.po.userName} 发的邮件
+					发件人: <strong>${userVo.po.userName}</strong> 
+					总发帖数: <span class="label label-default">${userVo.po.mailNum }</span> 
+					发帖排名: <span class="label label-info">${userVo.rank }</span>
 					<!-- InstanceEndEditable -->
 				</div>
 				<!-- END PAGE TITLE -->

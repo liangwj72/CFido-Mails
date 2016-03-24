@@ -242,6 +242,14 @@ public class QueryService {
 
 		MailModel vo = new MailModel(po);
 
+		if (po.getOriginMsgId() != null) {
+			// 看能否找到原帖
+			List<Mail> originList = this.mailRepository.findByMsgId(po.getOriginMsgId());
+			if (originList.size() > 0) {
+				vo.setOrigin(new MailModel(originList.get(0)));
+			}
+		}
+
 		if (po.getReplays() > 0) {
 			// 有回复的
 			List<Mail> orginReplayList = this.mailRepository.findByOriginMsgId(po.getMsgId());

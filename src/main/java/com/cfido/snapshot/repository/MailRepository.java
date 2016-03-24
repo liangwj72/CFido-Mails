@@ -32,4 +32,6 @@ public interface MailRepository extends PagingAndSortingRepository<Mail, Integer
 	@Query("select m.id from Mail m where m.mailFrom=?1")
 	public Page<Integer> findIdByMailFrom(String from, Pageable pageable);
 
+	public List<Mail> findByMsgId(String msgId);
+
 }

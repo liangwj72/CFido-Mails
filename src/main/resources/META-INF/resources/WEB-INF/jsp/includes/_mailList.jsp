@@ -14,9 +14,8 @@
 					<tr role="row">
 						<th>标题</th>
 						<th>发件人</th>
-						<th>收件人</th>
+						<th>信区</th>
 						<th>时间</th>
-						<th>回复</th>
 						<th>长度</th>
 					</tr>
 				</thead>
@@ -24,13 +23,19 @@
 					<c:forEach items="${pageVo.list}" var="vo">
 						<tr role="row">
 							<td><a href="/mail/${vo.po.id }" target="viewMailFrame"
-								class="js_viewMail"><c:out value="${vo.subject }" /></a></td>
-							<td><c:out value="${vo.po.mailFrom}" /></td>
-							<td><c:out value="${vo.po.mailTo}" /></td>
-							<td><fmt:formatDate value="${vo.po.createDate}" pattern="yyyy-MM-dd HH:mm"/></td>
-							<td><c:out value="" />
-								<c:if test="${vo.po.replays>0}">${vo.po.replays}</c:if></td>
-							<td><c:out value="" />${vo.po.msgLen}</td>
+								class="js_viewMail"><c:out value="${vo.subject }" /></a>
+								<c:if test="${vo.po.replays>0}"> 
+								<span class="label label-sm label-primary" title="回复数">${vo.po.replays}</span>
+								</c:if>
+							</td>
+							<td><c:out value="${vo.po.mailFrom}" /> <i
+								class="fa fa-long-arrow-right"></i> <c:out
+									value="${vo.po.mailTo}" />
+							</td>
+							<td><c:out value="${vo.po.area}" /></td>
+							<td><fmt:formatDate value="${vo.po.createDate}"
+									pattern="yyyy-MM-dd HH:mm" /></td>
+							<td>${vo.po.msgLen}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

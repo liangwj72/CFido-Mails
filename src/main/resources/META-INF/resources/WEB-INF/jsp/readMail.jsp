@@ -32,6 +32,13 @@
 				<li>时间: <span class="desc"><fmt:formatDate
 							value="${mail.po.createDate}" pattern="yyyy-MM-dd HH:mm" /></span>
 				</li>
+				<li>信区: ${mail.po.area}
+				</li>
+				<c:if test="${mail.hasOriginMail}">
+				<li>
+				  原帖: <a href="/mail/${mail.origin.po.id }" class="js_viewMail"><c:out value="${mail.origin.subject }" /></a> 
+				</li>
+				</c:if>
 			</ul>
 			<hr />
 			${mail.html}

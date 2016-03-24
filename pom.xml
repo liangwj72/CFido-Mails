@@ -3,12 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.cfido</groupId>
-	<artifactId>CfidoSnapshot</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<artifactId>CFidoMail</artifactId>
+	<!-- <version>0.0.2-SNAPSHOT</version>  -->
+	<version>1.0.3</version>
 
-	<name>snapshot</name>
-	<url>http://www.cfido.com</url>
+	<packaging>jar</packaging>
+
+	<name>中国惠多网邮件查询</name>
+	<url>http://cfido.liangwj.com</url>
 
 	<properties>
 		<!-- 默认jdk是1.7版本 -->
@@ -38,31 +40,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<exclusions>
-				<exclusion>
-					<artifactId>logback-classic</artifactId>
-					<groupId>ch.qos.logback</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j-over-slf4j</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<artifactId>logback-classic</artifactId>
-					<groupId>ch.qos.logback</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j-over-slf4j</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<!-- 我们用tomcat+jsp -->
@@ -79,11 +61,6 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
 		</dependency>
 
 		<!-- scope test -->
@@ -111,25 +88,9 @@
 
 		<plugins>
 
-			<!-- 打包时不能将log4j的配置文件给打包进去 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<!-- <packagingExcludes>**/log4j.properties</packagingExcludes> -->
-				</configuration>
-			</plugin>
-
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<useSystemClassLoader>false</useSystemClassLoader>
-				</configuration>
 			</plugin>
 
 		</plugins>
