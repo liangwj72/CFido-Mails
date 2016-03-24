@@ -51,12 +51,15 @@ div.dataTables_paginate ul.pagination {
 	margin-top:4px;
 }
 
-#viewMailDiv {
+#viewMailDiv .container{
 	position: fixed;
-	padding: 5px;
 	top: 0px;
 	bottom: 0px;
 	right: 0px;
+}
+
+#viewMailDiv .container{
+	padding: 5px;
 	background-color: #fff;
 	z-index: 20000;
 	border-left-color: rgb(232, 237, 243);
@@ -71,7 +74,13 @@ div.dataTables_paginate ul.pagination {
 	transition-duration: 0.5s;
 	transition-property: transform;
 	transition-timing-function: ease-in;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+#viewMailDiv .container{
 	width: 700px;
+}
 }
 
 #viewMailDiv .header {

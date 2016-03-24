@@ -31,13 +31,6 @@
 				<div class="row">
 					<div class="col-md-12">
 						<!-- InstanceBeginEditable name="body" -->
-						<div id="viewMailDiv" style="display: none;">
-							<div class="header">
-								<a class="btn btn-xs btn-info" id="id_viewMailClose"><i
-									class="fa fa-times"></i> 关闭</a>
-							</div>
-							<iframe name="viewMailFrame" src=""></iframe>
-						</div>
 
 						<%@include file="includes/_mailList.jsp"%>
 
