@@ -106,3 +106,9 @@ div.dataTables_paginate ul.pagination {
 .read_mail .replys {
 	margin:10px;
 }
+
+.logo {
+	float: left;
+	margin: 20px;
+}
+}

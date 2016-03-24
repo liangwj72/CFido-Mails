@@ -40,7 +40,7 @@
 								</div>
 							</div>
 							<div class="portlet-body">
-								<div class="pull-left">
+								<div class="logo">
 									<img alt="logo" src="/statics/img/logo-cfido.png">
 								</div>
 								<div >
