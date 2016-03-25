@@ -1,0 +1,7 @@
+@echo off
+@setlocal
+
+set /p VERSION=<..\VERSION.TXT
+set FILE=CFidoMail-%VERSION%.jar
+
+java -jar %FILE% --spring.config.location=./application.properties
