@@ -4,4 +4,4 @@
 set /p VERSION=<..\VERSION.TXT
 set FILE=CFidoMail-%VERSION%.jar
 
-java -jar %FILE% --spring.config.location=./application.properties
+java  -classpath ./CFidoMail-1.0.3/ org.springframework.boot.loader.JarLauncher
