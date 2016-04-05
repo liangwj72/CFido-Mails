@@ -43,3 +43,7 @@
 <script src="/statics/bootstrap-3.3.5/js/bootstrap.js"></script>
 <script src="/statics/my/jw.common.js"></script>
 <!-- COMMON JAVASCRIPT END -->
+
+<!-- 站长统计 -->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258403569'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258403569' type='text/javascript'%3E%3C/script%3E"));</script>
+<!-- /站长统计 -->
