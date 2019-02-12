@@ -1,7 +1,5 @@
 package com.cfido.snapshot.actions;
 
-import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,7 +27,7 @@ public class IndexActions extends BaseAction {
 	}
 
 	@RequestMapping("/")
-	public ModelAndView welcome(Map<String, Object> model) {
+	public ModelAndView welcome() {
 
 		return new ModelAndView("index");
 	}

@@ -1,0 +1,6 @@
+${AnsiColor.BRIGHT_RED}
+                                                             
+Cfido 惠多网邮件快照
+
+${AnsiColor.DEFAULT}
+开发团队: 梁韦江 liangwj72@qq.com
