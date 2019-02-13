@@ -29,7 +29,7 @@
 				<tbody>
 					<#list pageVo.list as vo>
 						<tr role="row">
-							<td><a href="/mail/${vo.po.id }" target="viewMailFrame"
+							<td><a href="/mail/${vo.po.id}" target="viewMailFrame"
 								class="js_viewMail">${vo.subject}</a><#if vo.po.replays>
 									<span class="label label-sm label-primary" title="回复数">${vo.po.replays}</span>
 								</#if></td>
@@ -44,7 +44,7 @@
 			</table>
 		</div>
 
-		<#include "_pageBar"/>
+		<#include "includes/_pageBar.ftl"/>
 
 	</div>
 </div>
