@@ -82,7 +82,7 @@ public class UserAction extends BaseAction {
 		}
 
 		PageQueryResult<UserModel> pageVo = this.queryService.findUser(form.getUsername(),
-				new PageRequest(page, VoConstants.PAGE_SIZE));
+				PageRequest.of(page, VoConstants.PAGE_SIZE));
 
 		pageVo.setActionUrl("/users/");
 

@@ -87,7 +87,7 @@ public class MailAction extends BaseAction {
 		if (areaVo != null) {
 
 			// 显示的页面从1页开始，程序是从0页开始
-			Pageable pageable = new PageRequest(page - 1, VoConstants.PAGE_SIZE);
+			Pageable pageable = PageRequest.of(page - 1, VoConstants.PAGE_SIZE);
 			PageQueryResult<MailModel> pageVo = this.queryService.findMailByAreaId(areaId, pageable);
 
 			pageVo.setActionUrl("/area/" + areaId);
@@ -143,7 +143,7 @@ public class MailAction extends BaseAction {
 		if (userVo != null) {
 
 			// 显示的页面从1页开始，程序是从0页开始
-			Pageable pageable = new PageRequest(page - 1, VoConstants.PAGE_SIZE);
+			Pageable pageable = PageRequest.of(page - 1, VoConstants.PAGE_SIZE);
 			PageQueryResult<MailModel> pageVo = this.queryService.findMailFromByUser(userVo.getPo().getUserName(), pageable);
 
 			pageVo.setActionUrl("/user/" + userId);

@@ -25,7 +25,7 @@ public class MailModel extends BasePoModel<Mail> {
 	 * @return
 	 */
 	private static String mailQuote(String msg) {
-		if (StringUtils.isEmpty(msg)) {
+		if (!StringUtils.hasText(msg)) {
 			return msg;
 		}
 
@@ -39,7 +39,7 @@ public class MailModel extends BasePoModel<Mail> {
 			} else {
 				sb.append("<div>");
 			}
-			if (StringUtils.isEmpty(str.trim())) {
+			if (!StringUtils.hasText(str.trim())) {
 				sb.append("<br/>");
 			} else {
 				sb.append(HtmlUtils.htmlEscape(str));
@@ -93,7 +93,7 @@ public class MailModel extends BasePoModel<Mail> {
 	}
 
 	public String getSubject() {
-		if (StringUtils.isEmpty(po.getSubj())) {
+		if (!StringUtils.hasText(po.getSubj())) {
 			return "无标题";
 		} else {
 			return po.getSubj();

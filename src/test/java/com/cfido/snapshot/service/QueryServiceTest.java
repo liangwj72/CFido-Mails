@@ -2,7 +2,7 @@ package com.cfido.snapshot.service;
 
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -39,7 +39,7 @@ public class QueryServiceTest {
 
 	// @Test
 	public void testFindMailByAreaId() {
-		Page<Integer> page = this.mailDao.findIdByAreaId(1, new PageRequest(2500, 20));
+		Page<Integer> page = this.mailDao.findIdByAreaId(1, PageRequest.of(2500, 20));
 		List<Mail> list = this.mailDao.findByIdIn(page.getContent().toArray(new Integer[0]));
 
 		System.out.println(list.size());

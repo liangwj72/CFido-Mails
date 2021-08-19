@@ -1,0 +1,31 @@
+version: '3.5'
+services:
+
+  cfidomail:
+    container_name: cfido-mail
+    image: liangwj72/cfido-mail:1.0.4
+    ports:
+    - "8080:8080"
+    environment:
+      APP_DB_HOST: mysql
+      APP_DB_PORT: 3306
+      APP_DB_NAME: cfido
+      APP_DB_USERNAME: cfido
+      APP_DB_PASSWORD: newmoon
+
+  mysql:
+    image: mysql:5.7
+    ports:
+    - "3306:3306"
+    volumes:
+      - cfidomysql:/var/lib/mysql:rw
+      - ./backup:/backup
+      - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime
+    environment:
+      MYSQL_USER: cfido
+      MYSQL_PASSWORD: newmoon
+      MYSQL_ROOT_PASSWORD: newmoon
+      MYSQL_DATABASE: cfido
+
+volumes:
+  cfidomysql:

@@ -25,9 +25,9 @@
 
 	<!-- Inherit defaults from Spring Boot -->
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<groupId>com.cfido.commons</groupId>
+		<artifactId>root-pom</artifactId>
+		<version>2.2-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
@@ -42,6 +42,10 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -59,16 +63,68 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!-- /scope test -->
 
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<!-- 打jar包的配置 -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+
+				<configuration>
+					<!-- 配置文件，静态文件 这类三类文件需要排除在外，但模板打包在内 -->
+					<excludes>
+						<exclude>/application*.*</exclude>
+						<exclude>/static/**.*</exclude>
+					</excludes>
+
+					<archive>
+						<manifest>
+							<!-- 在manifest中设置Class-Path，并将所有的第三方依赖包的路径放里面 -->
+							<addClasspath>true</addClasspath>
+
+							<!-- 生成的manifest中classpath的前缀，因为要把第三方jar放到lib目录下，所以classpath的前缀是lib/ -->
+							<classpathPrefix>lib/</classpathPrefix>
+
+							<!-- 启动程序 -->
+							<mainClass>com.cfido.snapshot.MainApplication</mainClass>
+
+							<!-- 解决SNAPSHOT jar包问题，如果没有这句，会有ClassNotFound的错误 -->
+							<useUniqueVersions>false</useUniqueVersions>
+						</manifest>
+
+						<!-- 我们需要在class-path额外的增加两个目录。conf：配置文件目录，ftl：模板文件目录 -->
+						<!-- <manifestEntries> <Class-Path>ftl/</Class-Path> </manifestEntries> -->
+					</archive>
+				</configuration>
+			</plugin>
 
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- 用于拷贝依赖库的插件 -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<!-- 我们将依赖库拷贝到target/lib这个目录下 -->
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<includeScope>runtime</includeScope>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>

@@ -1,7 +1,0 @@
-@echo off
-@setlocal
-
-set /p VERSION=<..\VERSION.TXT
-set FILE=CFidoMail-%VERSION%.jar
-
-java  -classpath ./CFidoMail-1.0.3/ org.springframework.boot.loader.JarLauncher

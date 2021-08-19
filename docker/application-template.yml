@@ -1,0 +1,75 @@
+# ===============================
+# tomcat 配置, 配合nginx
+# ===============================
+server:
+  tomcat:
+    remoteip:
+      remote-ip-header: x-forwarded-for
+      protocol-header: x-forwarded-proto
+    
+  # 监听端口
+  port: 8080
+
+# ===============================
+# spring配置
+# ===============================
+spring:
+  freemarker:
+    # 模板后缀，默认是ftlh
+    suffix: .ftl
+    # 特殊配置: 防止freemark空指针
+    settings: 
+      classic_compatible: true
+
+  # 特殊配置: 防止没有定义接口的aop类出错
+  aop.proxy-target-class: true
+
+  # sping 2.x版默认是关闭jmx的，需要手动打开
+  jmx:
+    enabled: true
+
+  # 文件上传配置
+  servlet:
+    multipart:
+      maxRequestSize: 200MB
+      maxFileSize: 200MB
+     
+  # spring 数据库连接配置
+  # ----------------------------
+  datasource:
+    url: jdbc:mysql://${APP_DB_HOST}:${APP_DB_PORT}/${APP_DB_NAME}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: ${APP_DB_USERNAME}
+    password: ${APP_DB_PASSWORD}
+    initialize: false
+    test-on-borrow: true
+    test-on-return: false
+    test-while-idle: true
+    max-wait-millis: 10000
+    validation-query: "SELECT 1"
+
+  # spring jpa配置，
+  # ----------------------------
+  jpa:
+    show-sql: ${APP_SHOW_SQL}
+    hibernate:
+      # 注意：开发时为方便调试ddl-auto设置为 update ，但在正式服务器可不能这样干
+      ddl-auto: ${APP_DB_DDL_AUTO}
+      # 在hibernate5，use-new-id-generator-mappings默认值为true，但这个会和mysql的自增长冲突，所以必须关闭
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLMyISAMDialect
+
+# ===============================
+# Logger配置 注意：Eclipse需要装ansi颜色插件，因为日志格式带了颜色
+# ===============================
+logging:
+  level:
+    # root是全局的，默认是error
+    root: error
+    # 本项目的代码
+    com.cfido.snapshot: ${APP_LOG_LEVEL}
+    
+  # 在console中显示时，我们为字体加了颜色，方便查看，但输出到文件时，加颜色就没有必要了
+  pattern: 
+    console: "[%thread] %-5level %d{HH:mm:ss} %class{16}:%line - %msg %n"

@@ -1,0 +1,46 @@
+# Eclipse 项目文件
+.project
+.settings
+.classpath
+.externalToolBuilders
+.factorypath
+.apt_generated
+
+# Idea 项目文件
+.idea/
+.iml/
+*.iml
+*.ipr
+*.iws
+*.idea
+
+# 系统 log file
+hs_err_pid*
+run.pid
+
+# Maven Build 目录和 Spring boot的配置文件 
+target
+application.properties
+
+# 其他杂七杂八
+*.sw?
+.#*
+*#
+*~
+*.sublime-*
+~$*
+.svn/
+Thumbs.db
+MANIFEST.MF
+/.vscode
+
+# Mac 系统的文件
+.DS_Store
+Desktop.ini
+
+# Gradle 项目文件
+build.gradle
+gradle.properties.sample
+mvn-push.gradle
+gradle.properties
+settings.gradle

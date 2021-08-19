@@ -53,12 +53,12 @@ public class BinderUtil {
 
 				// 将路径信息放到session名字中，防止有session名的重复
 				String pathSessionName = "bindForm:" + formClazz.getName();
-				if (!StringUtils.isEmpty(extSession)) {
+				if (StringUtils.hasText(extSession)) {
 					pathSessionName += extSession;
 				}
 
 				// 如果sessionName不为空，才需要从session中获取
-				if (StringUtils.isEmpty(resetParam) || !request.getParameterMap().containsKey(resetParam)) {
+				if (!StringUtils.hasText(resetParam) || !request.getParameterMap().containsKey(resetParam)) {
 					// 如果不需要重置，才需要从session中获取
 					form = (T) request.getSession().getAttribute(pathSessionName);
 					if (form == null) {

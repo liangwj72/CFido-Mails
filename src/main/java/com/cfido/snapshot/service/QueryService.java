@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.annotation.PostConstruct;
 
@@ -57,7 +58,7 @@ public class QueryService {
 	/**
 	 * 以id为key的信区map,用于校验信区的合法性
 	 */
-	private final Map<Integer, AreaModel> areaMap = new HashMap<>();
+	private final Map<Integer, AreaModel> areaMap = new HashMap<>(110);
 
 	private List<UserModel> userList;
 	private final Map<Integer, UserModel> userMap = new HashMap<>();// 缓存用户的map
@@ -68,7 +69,7 @@ public class QueryService {
 
 	@PostConstruct
 	public void init() {
-		log.info("QueryService 初始");
+		log.info("初始化 QueryService");
 
 		List<Areas> list = this.findAllArea();
 		for (Areas po : list) {
@@ -76,6 +77,7 @@ public class QueryService {
 			this.areaList.add(vo);
 			this.areaMap.put(po.getId(), vo);
 		}
+		log.info("初始化 QueryService完成， 加载所有信区到内存");
 	}
 
 	/**
@@ -235,10 +237,13 @@ public class QueryService {
 
 	public MailModel findMail(Integer msgId) {
 
-		Mail po = this.mailRepository.findOne(msgId);
-		if (po == null) {
+		Optional<Mail> opt = this.mailRepository.findById(msgId);
+
+		if (!opt.isPresent()) {
 			return null;
 		}
+
+		Mail po = opt.get();
 
 		MailModel vo = new MailModel(po);
 
