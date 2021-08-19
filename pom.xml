@@ -83,7 +83,6 @@
 					<!-- 配置文件，静态文件 这类三类文件需要排除在外，但模板打包在内 -->
 					<excludes>
 						<exclude>/application*.*</exclude>
-						<exclude>/static/**.*</exclude>
 					</excludes>
 
 					<archive>
