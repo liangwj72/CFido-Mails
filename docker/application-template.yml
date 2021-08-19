@@ -20,6 +20,7 @@ spring:
     # 特殊配置: 防止freemark空指针
     settings: 
       classic_compatible: true
+      number_format: 0.##
 
   # 特殊配置: 防止没有定义接口的aop类出错
   aop.proxy-target-class: true
